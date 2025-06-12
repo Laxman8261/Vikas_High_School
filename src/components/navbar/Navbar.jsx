@@ -56,7 +56,7 @@ const Navbar = () => {
                         <img className='image' src={logo} alt="Logo" />
                     </div>
                     <div className='text-container'>
-                        <h5 href="/" className="navbar-brand">P.E.M High School & Jr College</h5>
+                        <h5 href="/" className="navbar-brand">Vikas High School</h5>
                         <p className="navbar-adress">Near Fehnegaon, Kamatghar, Bhiwandi, Thane 421302</p>
                     </div>
                 </div>
