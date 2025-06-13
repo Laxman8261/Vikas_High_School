@@ -1,8 +1,8 @@
 import React from 'react';
 import './RightFaculty.css';
-import facultyGroupImage from '../components/assets/blogImages/Dahihandi.jpeg';
-import secondaryFaculty from '../components/assets/schoolImages/secondaryFaculty.jpg';
-import collegeFaculty from '../components/assets/schoolImages/collegeFaculty.png';
+import facultyGroupImage from '../assets/blogImages/Dahihandi.jpeg';
+import secondaryFaculty from '../assets/schoolImages/secondaryFaculty.jpg';
+import collegeFaculty from '../assets/schoolImages/collegeFaculty.png';
 
 const RightFaculty = () => {
     return (

@@ -11,7 +11,7 @@ import SchoolAdmissions from './components/admissions/SchoolAdmissions';
 import Facility from './components/facility/Facility';
 import BlogPage from './components/blog/BlogPage';
 import RightCurriculum from './components/curriculum/RightCurriculum';
-import RightFaculty from './faculty/RightFaculty';
+import RightFaculty from './components/faculty/RightFaculty';
 import SchoolFacilities from './components/SchoolFacilities/SchoolFacilities';
 import RightCapability from './components/RightCapability/RightCapability';
 import Toppers from './components/toppers/Toppers';
