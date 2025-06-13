@@ -106,6 +106,14 @@
 
 .committee__member-container {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.committee__member-container-tribute {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
@@ -151,6 +159,7 @@
     height: 100%;
     object-fit: cover;
     cursor: pointer;
+    border-radius: 0 !important;
 }
 
 /* Responsive styles */
@@ -170,9 +179,10 @@
 }
 
 @media (max-width: 768px) {
-    .tribute-image-container {
+    .committee__member-container-tribute {
         width: 90%;
-        margin-top: 20px;
+        grid-template-columns: repeat(2, 2fr);
+        margin-left: 20px;
     }
 
     .committee__member {

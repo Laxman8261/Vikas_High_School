@@ -1,29 +1,24 @@
 import React, { useState } from 'react';
 import './navbar.css';
 import logo from '../assets/TSSS-Logo.jpg';
-import { href } from 'react-router-dom';
+import { FaChevronDown } from 'react-icons/fa';
 
 const Navbar = () => {
     const [isAboutDropdownOpen, setAboutDropdownOpen] = useState(false);
     const [isAcademicsDropdownOpen, setAcademicsDropdownOpen] = useState(false);
+    const [isAddmissionDropdownOpen, setAddmissionDropdownOpen] = useState(false);
+    const [isWhyPEM, setWhyPEM] = useState(false);
     const [isMenuOpen, setMenuOpen] = useState(false);
 
-    const toggleAboutDropdown = () => {
-        setAboutDropdownOpen(!isAboutDropdownOpen);
-    };
+    const isMobile = window.innerWidth <= 768;  // You can adjust 768px to match your mobile breakpoint
 
-    const toggleAcademicsDropdown = () => {
-        setAcademicsDropdownOpen(!isAcademicsDropdownOpen);
-    };
 
-    const toggleMenu = () => {
-        setMenuOpen(!isMenuOpen);
-    };
-
-    const closeMenu = () => {
-        setMenuOpen(false);
-    };
-
+    const toggleAboutDropdown = () => setAboutDropdownOpen(!isAboutDropdownOpen);
+    const toggleAddmissionDropdown = () => setAddmissionDropdownOpen(!isAddmissionDropdownOpen);
+    const toggleWhyPEM = () => setWhyPEM(!isWhyPEM);
+    const toggleAcademicsDropdown = () => setAcademicsDropdownOpen(!isAcademicsDropdownOpen);
+    const toggleMenu = () => setMenuOpen(!isMenuOpen);
+    const closeMenu = () => setMenuOpen(false);
     return (
         <div className="navbar-main-container">
             <div className="admission-marquee">
@@ -62,32 +57,73 @@ const Navbar = () => {
                 </div>
                 <div className="menu-icon" onClick={toggleMenu}>
                     ☰
+                    <p style={{ fontSize: '0.7rem' }}>Menu</p>
                 </div>
                 <div className={`navbar-overlay ${isMenuOpen ? 'active' : ''}`} onClick={closeMenu}></div>
+
                 <div className={`navbar-links ${isMenuOpen ? 'show' : ''}`}>
                     <a href="/" className="nav-link" onClick={closeMenu}>Home</a>
-                    <div className="nav-link" onMouseEnter={toggleAboutDropdown} onMouseLeave={toggleAboutDropdown} >
-                        About Us
+
+                    <div className="nav-link"
+                        onMouseEnter={toggleAboutDropdown} onMouseLeave={toggleAboutDropdown}
+                        onClick={isMobile ? toggleAboutDropdown : undefined}
+                    >
+                        About Us <FaChevronDown size={14} color="#000" />
                         {isAboutDropdownOpen && (
                             <div className="dropdown-menu">
                                 <a href="#aboutus" className="dropdown-item" onClick={closeMenu}>About School</a>
                                 <a href="/management" className="dropdown-item" onClick={closeMenu}>Our Management</a>
-                                <a href="/OurPrincipalsView" className="dropdown-item" onClick={closeMenu}>Principal's Message</a>
-                                <a href="#facility" className="dropdown-item" onClick={closeMenu}>Facility</a>
+                                <a href="/ChairmanMessage" className="dropdown-item" onClick={closeMenu}>Chairman's Message</a>
+                                <a href="/OurPrincipalsView" className="dropdown-item" onClick={closeMenu}>Principal's Desk</a>
+                                <a href="/Facility" className="dropdown-item" onClick={closeMenu}>P.E.M. Intiatives</a>
+                                {/* <a href="/awards" className="dropdown-item" onClick={closeMenu}>Awards</a> */}
+                                <a href="/Broucher" className="dropdown-item" onClick={closeMenu}>School Broucher</a>
                             </div>
                         )}
                     </div>
-                    <div className="nav-link" onMouseEnter={toggleAcademicsDropdown} onMouseLeave={toggleAcademicsDropdown} >
-                        Academics
+
+                    <div className="nav-link"
+                        onMouseEnter={toggleAcademicsDropdown} onMouseLeave={toggleAcademicsDropdown}
+                        onClick={isMobile ? toggleAcademicsDropdown : undefined}
+                    >
+                        Academics <FaChevronDown size={14} color="#000" />
                         {isAcademicsDropdownOpen && (
                             <div className="dropdown-menu">
-                                <a href="#curriculum" className="dropdown-item" onClick={closeMenu}>Curriculum</a>
-                                <a href="#toppers" className="dropdown-item" onClick={closeMenu}>Toppers</a>
-                                <a href="#circulars" className="dropdown-item" onClick={closeMenu}>Circulars</a>
-                                <a href="#newsletter" className="dropdown-item" onClick={closeMenu}>Newsletter</a>
+                                <a href="/RightCurriculum" className="dropdown-item" onClick={closeMenu}>Curriculum</a>
+                                <a href="/Toppers" className="dropdown-item" onClick={closeMenu}>Toppers</a>
+                                <a href="#Calender" className="dropdown-item" onClick={closeMenu}>Calender</a>
                             </div>
                         )}
                     </div>
+
+                    <div className="nav-link"
+                        onMouseEnter={toggleWhyPEM} onMouseLeave={toggleWhyPEM}
+                        onClick={isMobile ? toggleWhyPEM : undefined}
+                    >
+                        Why P.E.M. <FaChevronDown size={14} color="#000" />
+                        {isWhyPEM && (
+                            <div className="dropdown-menu">
+                                <a href="/RightCurriculum" className="dropdown-item" onClick={closeMenu}>The Right Curriculum</a>
+                                <a href="/RightFaculty" className="dropdown-item" onClick={closeMenu}>The Right Faculty</a>
+                                <a href="/SchoolFacilities" className="dropdown-item" onClick={closeMenu}>The School Facilities</a>
+                                <a href="/RightCapability" className="dropdown-item" onClick={closeMenu}>The Right Capability</a>
+                            </div>
+                        )}
+                    </div>
+
+                    <div className="nav-link"
+                        onMouseEnter={toggleAddmissionDropdown} onMouseLeave={toggleAddmissionDropdown}
+                        onClick={isMobile ? toggleAddmissionDropdown : undefined}
+                    >
+                        Admissions <FaChevronDown size={14} color="#000" />
+                        {isAddmissionDropdownOpen && (
+                            <div className="dropdown-menu">
+                                <a href="/SchoolAdmissions" className="dropdown-item" onClick={closeMenu}>Addmissions For Schools 2025-26</a>
+                                {/* <a href="/JrCollegeAdmissions" className="dropdown-item" onClick={closeMenu}>Addmissions For Jr College 2025-26</a> */}
+                            </div>
+                        )}
+                    </div>
+                    <a href="/Blog" className="nav-link" onClick={closeMenu}>Blogs</a>
                     <a href="#ContactUs" className="nav-link" onClick={closeMenu}>Contact Us</a>
                 </div>
             </nav>

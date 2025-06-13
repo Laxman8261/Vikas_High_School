@@ -71,6 +71,7 @@ body {
 .navbar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: #fff;
     padding: 0.3rem 2rem;
     color: var(--text-color);
@@ -84,7 +85,6 @@ body {
 
 .navbar-title {
     display: flex;
-    width: 50%;
     gap: 20px;
     align-items: center;
 }
@@ -122,9 +122,8 @@ body {
 
 .navbar-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.2rem;
     position: relative;
-    width: 50%;
     align-items: center;
     justify-content: flex-end;
 }

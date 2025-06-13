@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section-container">
           <div className="footer-section-about">
-            <h1>P.E.M High School & Jr College</h1>
+            <h1>Vikas High School</h1>
             <p>Shaping the future through education and excellence. Join us in building a better tomorrow.</p>
             <div className="social-icons">
               <a href="#"><FaFacebook /></a>
